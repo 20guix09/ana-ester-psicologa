@@ -1,0 +1,47 @@
+/* Version 5: quiet motion, warm light and precise hover feedback. */
+:root{--motion-ease:cubic-bezier(.22,1,.36,1)}
+.button,.nav-cta{position:relative;overflow:hidden;isolation:isolate}
+.button:before,.nav-cta:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(110deg,transparent 20%,#ffffff14 48%,transparent 76%);transform:translateX(-110%);transition:transform .65s var(--motion-ease);pointer-events:none}
+.button>span,.nav-cta>span,.text-link>span:last-child,.booking-contact a>span:last-child{transition:transform .35s var(--motion-ease)}
+.text-link,.booking-contact a{transition:color .25s,border-color .25s}
+.portrait-arch img{transition:transform .8s var(--motion-ease)}
+.about-visual,.reflection-image{transition:transform .65s var(--motion-ease)}
+.about-stamp,.hero-note{transition:box-shadow .45s,transform .45s var(--motion-ease)}
+.experience,.approach-grid article{position:relative;isolation:isolate;transition:background-color .35s}
+.experience:before,.approach-grid article:before{content:'';position:absolute;inset:0;z-index:-1;opacity:0;pointer-events:none;background:radial-gradient(260px circle at var(--light-x,50%) var(--light-y,50%),#a47a5d16,transparent 75%);transition:opacity .35s}
+.experience .number,.experience .plus,.approach-grid .step{transition:color .3s,transform .35s var(--motion-ease)}
+.care-detail>div{transition:border-color .3s}
+.topic-tags span{transition:background-color .3s,border-color .3s}
+summary{transition:color .25s}
+details[open]>p{animation:answer-enter .35s var(--motion-ease) both}
+.booking-form{transition:box-shadow .4s}
+.booking-form:focus-within{box-shadow:0 18px 65px #49352b10}
+.form-grid input,.form-grid select,.form-grid textarea{transition:border-color .25s,box-shadow .25s,background-color .25s}
+.form-grid input:focus,.form-grid select:focus,.form-grid textarea:focus{box-shadow:0 0 0 3px #a47a5d15;background:var(--paper)}
+.motion-enter{animation:content-enter .75s var(--motion-ease) both;animation-delay:var(--entry-delay,0ms)}
+@keyframes content-enter{from{opacity:0;translate:0 16px}to{opacity:1;translate:0 0}}
+@keyframes answer-enter{from{opacity:0;translate:0 -4px}to{opacity:1;translate:0 0}}
+@media(hover:hover) and (pointer:fine){
+  .button:not(:disabled):hover:before,.nav-cta:hover:before{transform:translateX(110%)}
+  .button:not(:disabled):hover>span,.nav-cta:hover>span{transform:translate(3px,-3px)}
+  .text-link:hover,.booking-contact a:hover{color:var(--caramel);border-color:var(--ink)}
+  .text-link:hover>span:last-child,.booking-contact a:hover>span:last-child{transform:translate(3px,-2px)}
+  .portrait-arch:hover img{transform:scale(1.025)}
+  .about-visual:hover{transform:translateY(-4px)}
+  .about-visual:hover .about-stamp{box-shadow:0 12px 30px #49352b12}
+  .reflection-image:hover{transform:rotate(-.5deg) translateY(-4px)}
+  .hero-note:hover{transform:translateY(-3px);box-shadow:0 12px 40px #49352b18}
+  .experience:hover:before,.approach-grid article:hover:before{opacity:1}
+  .experience:hover .plus{transform:translate(3px,-3px)}
+  .experience:hover .number,.approach-grid article:hover .step{color:var(--ink)}
+  .care-detail>div:hover{border-color:var(--caramel)}
+  .topic-tags span:hover{background:var(--paper);border-color:var(--caramel)}
+  summary:hover{color:var(--caramel)}
+}
+@media(prefers-reduced-motion:reduce){
+  .motion-enter,details[open]>p{animation:none}
+  .button,.nav-cta,.button:before,.nav-cta:before,.button>span,.nav-cta>span,.text-link,.text-link>span:last-child,.booking-contact a,.booking-contact a>span:last-child,.portrait-arch img,.about-visual,.reflection-image,.about-stamp,.hero-note,.experience,.approach-grid article,.experience:before,.approach-grid article:before,.experience .number,.experience .plus,.approach-grid .step,.care-detail>div,.topic-tags span,summary,summary span,.booking-form,.form-grid input,.form-grid select,.form-grid textarea{transition:none}
+  .button:hover,.button:hover>span,.nav-cta:hover>span,.text-link:hover>span:last-child,.booking-contact a:hover>span:last-child,.portrait-arch:hover img,.about-visual:hover,.hero-note:hover,.experience:hover .plus{transform:none}
+  .reflection-image:hover{transform:rotate(-2deg)}
+  .button:before,.nav-cta:before,.experience:before,.approach-grid article:before{display:none}
+}

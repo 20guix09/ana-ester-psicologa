@@ -1,0 +1,14 @@
+/* Approved AE mark, with a readable wordmark and responsive high-detail photos. */
+.brand{flex-direction:row;align-items:center;gap:10px}
+/* Fit the visible mark, rather than its transparent square canvas. */
+.brand-symbol{position:relative;display:block;width:110px;height:68px;flex:0 0 110px;overflow:hidden}
+.brand-symbol .brand-mark{position:absolute;max-width:none;width:116px;height:116px;left:-2px;top:-30px;object-fit:contain}
+.brand-wordmark{display:flex;flex-direction:column}
+.brand-name{font-size:34px;letter-spacing:-.065em;line-height:1.1;white-space:nowrap}
+.brand-caption{font-size:9px;line-height:12px;letter-spacing:.29em;color:var(--caramel);margin-top:3px}
+.brand-registration{font-size:8px;line-height:11px;letter-spacing:.12em;color:var(--muted);margin-top:7px}
+.footer .brand-name{font-size:34px}
+.footer .brand-caption{font-size:9px}
+.thankyou-brand{margin-bottom:32px}
+@media(max-width:1100px){.header .brand{gap:8px}.header .brand-symbol{width:92px;height:56px;flex-basis:92px}.header .brand-symbol .brand-mark{width:97px;height:97px;left:-2px;top:-25px}.header .brand-name{font-size:29px}.header .brand-caption{font-size:8px;line-height:10px;margin-top:2px}.header .brand-registration{font-size:7px;line-height:9px;margin-top:5px}}
+@media(max-width:560px){.brand{gap:8px}.header .brand-symbol{width:82px;height:50px;flex-basis:82px}.header .brand-symbol .brand-mark{width:87px;height:87px;left:-2px;top:-22px}.header .brand-name{font-size:27px}.header .brand-caption{font-size:7px;line-height:10px}.header .brand-registration{font-size:6px;line-height:9px;margin-top:4px}.footer .brand{grid-column:1/-1}.footer-actions{grid-column:1/-1;justify-content:flex-start;flex-direction:row;align-items:center}.footer .brand-symbol{width:98px;height:60px;flex-basis:98px}.footer .brand-symbol .brand-mark{width:104px;height:104px;left:-2px;top:-27px}.footer .brand-name{font-size:31px}.footer .brand-caption{font-size:8px}}
